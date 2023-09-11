@@ -1,7 +1,7 @@
 const Feed = async () => {
   return (
     <main>
-      <h1>Feed</h1>
+      <h2>Feed</h2>
     </main>
   );
 };
