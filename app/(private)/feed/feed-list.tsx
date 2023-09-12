@@ -1,3 +1,4 @@
+import Post from "@/app/components/post";
 import useSWR from "swr";
 
 function FeedList({ index }: { index: number }) {
@@ -9,7 +10,11 @@ function FeedList({ index }: { index: number }) {
   return (
     <ul>
       {data.data.map((post: PostI) => {
-        return <li key={post.id}>{post.content}</li>;
+        return (
+          <li key={post.id} className="my-5">
+            <Post post={post} />
+          </li>
+        );
       })}
     </ul>
   );
