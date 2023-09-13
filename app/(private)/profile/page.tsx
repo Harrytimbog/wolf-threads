@@ -3,6 +3,7 @@
 import React from "react";
 import useSWR from "swr";
 import Form from "./form";
+import PostContainer from "@/app/components/post-container";
 
 const Profile = () => {
   const { data, error, isLoading } = useSWR("/api/users/profile");
@@ -16,6 +17,7 @@ const Profile = () => {
     <main>
       <h2>Profile</h2>
       <Form />
+      <PostContainer username={data.data.username} />
     </main>
   );
 };
