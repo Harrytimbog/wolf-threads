@@ -11,9 +11,9 @@ const PostContainer = ({ username }: { username: string }) => {
   }
 
   return (
-    <div>
+    <div className="my-5">
       {pages}
-      <div>
+      <div className="flex flex-row justify-center">
         <button
           onClick={() => setCnt(cnt + 1)}
           className="bg-slate-900 p-2 rounded-lg self-center"

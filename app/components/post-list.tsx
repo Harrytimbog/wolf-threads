@@ -13,7 +13,7 @@ const PostList = ({ index, username }: { index: number; username: string }) => {
     <ul>
       {data.data.map((post: PostI) => {
         return (
-          <li key={post.id}>
+          <li key={post.id} className="my-5">
             <Post post={post} />
           </li>
         );
