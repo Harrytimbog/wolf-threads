@@ -15,7 +15,7 @@ const Form = () => {
 
     if (res.ok) {
       setPost("");
-      
+      mutate((key) => typeof key === "string" && key.startsWith("/api/posts"));
     }
   };
 
