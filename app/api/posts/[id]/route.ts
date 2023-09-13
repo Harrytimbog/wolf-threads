@@ -18,8 +18,6 @@ export async function GET(
     return NextResponse.json({ error: "not found" }, { status: 404 });
   }
 
-  console.log(res);
-
   return NextResponse.json({ data: res.rows[0] });
 }
 
