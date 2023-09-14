@@ -8,7 +8,7 @@ const FollowingContainer = () => {
 
   const pages = [];
   for (let i = 0; i < cnt; i++) {
-    pages.push(<FollowingList index={i} />);
+    pages.push(<FollowingList index={i} key={i} />);
   }
   return (
     <div>

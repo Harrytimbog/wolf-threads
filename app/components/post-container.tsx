@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useState } from "react";
 import PostList from "./post-list";
 
@@ -7,7 +9,7 @@ const PostContainer = ({ username }: { username: string }) => {
   const pages = [];
 
   for (let i = 0; i < cnt; i++) {
-    pages.push(<PostList index={i} username={username} />);
+    pages.push(<PostList index={i} key={i} username={username} />);
   }
 
   return (
