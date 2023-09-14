@@ -1,4 +1,5 @@
 "use client";
+import { notFound } from "next/navigation";
 import useSWR, { mutate } from "swr";
 
 const UserPageHeader = ({ username }: { username: string }) => {
@@ -16,6 +17,9 @@ const UserPageHeader = ({ username }: { username: string }) => {
 
   if (errorFollow || errorUser) return <div>failed to load</div>;
   if (isLoadingFollow || isLoadingUser) return <div>Loading...</div>;
+
+  // Check if user does not exist in the database, then user page can't exist
+  if (dataUser.data.length === 0) notFound();
 
   const user = dataUser.data[0];
 

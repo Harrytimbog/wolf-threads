@@ -1,0 +1,14 @@
+import React from "react";
+
+// Just incase I want to customize Not Found Page for this page later
+
+const notFound = () => {
+  return (
+    <div>
+      <h2>Not Found</h2>
+      <p>Could not find the requested resource</p>
+    </div>
+  );
+};
+
+export default notFound;
