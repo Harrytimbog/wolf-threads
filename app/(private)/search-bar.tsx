@@ -1,3 +1,4 @@
+import * as _ from "lodash";
 import { ChangeEvent, FormEvent, useState } from "react";
 
 const SearchBar = () => {
@@ -13,9 +14,11 @@ const SearchBar = () => {
     }
   };
 
+  const debouncedFetchSearchResults = _.debounce(fetchSearchResults, 500);
+
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
-    console.log("change", e.target.value);
-    fetchSearchResults(e.target.value);
+    // console.log("change", e.target.value);
+    debouncedFetchSearchResults(e.target.value);
   };
 
   return (
