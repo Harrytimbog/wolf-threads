@@ -25,7 +25,7 @@ const UserPageHeader = ({ username }: { username: string }) => {
 
   const handleFollow = async () => {
     const res = await fetch("/api/follows", {
-      method: "post",
+      method: "POST",
       body: JSON.stringify({ user_id: user.id }),
     });
 
@@ -36,7 +36,7 @@ const UserPageHeader = ({ username }: { username: string }) => {
 
   const handleUnFollow = async () => {
     const res = await fetch("/api/follows/" + user.id, {
-      method: "delete",
+      method: "DELETE",
     });
 
     if (res.ok) {

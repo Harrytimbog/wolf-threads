@@ -13,7 +13,7 @@ const Form = () => {
     e.preventDefault();
 
     const res = await fetch("/api/login", {
-      method: "post",
+      method: "POST",
       body: JSON.stringify({ username, password }),
     });
     if (res.ok) {
