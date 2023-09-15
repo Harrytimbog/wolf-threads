@@ -2,7 +2,15 @@ import React from "react";
 import useSWR from "swr";
 import Post from "./post";
 
-const PostList = ({ index, username }: { index: number; username: string }) => {
+const PostList = ({
+  index,
+  username,
+  showEditBtn,
+}: {
+  index: number;
+  username: string;
+  showEditBtn?: boolean;
+}) => {
   const { data, error, isLoading } = useSWR(
     () => "/api/posts?page=" + index + "&username=" + username
   );
@@ -14,7 +22,7 @@ const PostList = ({ index, username }: { index: number; username: string }) => {
       {data.data.map((post: PostI) => {
         return (
           <li key={post.id} className="my-5">
-            <Post post={post} />
+            <Post post={post} showEditBtn={showEditBtn} />
           </li>
         );
       })}

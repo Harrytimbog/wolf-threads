@@ -2,7 +2,13 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
-const Post = ({ post }: { post: PostI }) => {
+const Post = ({
+  post,
+  showEditBtn,
+}: {
+  post: PostI;
+  showEditBtn?: boolean;
+}) => {
   const options: Intl.DateTimeFormatOptions = {
     year: "numeric",
     month: "long",
@@ -37,9 +43,21 @@ const Post = ({ post }: { post: PostI }) => {
         <div className="font-bold">
           <Link href={`/${post.username}`}>{post.username} </Link>
         </div>
-        <div className="text-slate-400">{createAt.toLocaleDateString("en-us", options)}</div>
+        <div className="text-slate-400">
+          {createAt.toLocaleDateString("en-us", options)}
+        </div>
         <div>{post.content}</div>
       </div>
+      {showEditBtn && (
+        <div className="text-right flex-grow">
+          <Link
+            href={`/profile/edit-post/${post.id}`}
+            className="text-green-400"
+          >
+            Edit
+          </Link>
+        </div>
+      )}
     </div>
   );
 };
