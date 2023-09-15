@@ -1,10 +1,8 @@
 import { useRouter } from "next/navigation";
 import React, { FormEvent, useState } from "react";
-import { useSWRConfig } from "swr";
 
 const EditForm = ({ post }: { post: PostI }) => {
   const router = useRouter();
-  const { mutate } = useSWRConfig();
   const [content, setContent] = useState(post.content);
 
   const handleSubmit = async (e: FormEvent) => {
