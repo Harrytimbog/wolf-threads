@@ -1,6 +1,6 @@
 import FollowersContainer from "./followers-container";
 
-const Followers = async () => {
+const Followers = () => {
   return (
     <main>
       <h2>Followers</h2>

@@ -1,6 +1,6 @@
 import FeedContainer from "./feed-container";
 
-const Feed = async () => {
+const Feed = () => {
   return (
     <main>
       <h2>Feed</h2>
