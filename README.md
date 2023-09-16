@@ -1,6 +1,8 @@
 ## Live App Demo 
 [wolf-threads](https://wolf-threads.vercel.app/)
 
+You can login with username: Jaylin7, password: 123456
+
 ## Getting Started to run in development
 
 First, run the development server:
