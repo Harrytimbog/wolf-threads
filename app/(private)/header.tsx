@@ -3,6 +3,7 @@
 import useSWR from "swr";
 import React from "react";
 import User from "../components/user";
+import Link from "next/link";
 
 const Header = () => {
   const { data, error, isLoading } = useSWR("/api/users/profile");
@@ -11,7 +12,9 @@ const Header = () => {
   return (
     <header className="flex flex-row w-full p-5 dark:bg-slate-800 bg-slate-300 rounded-lg my-2 justify-between items-center">
       <div>
-        <h1 className="font-mono text-lg">Wolf Threads</h1>
+        <h1 className="font-mono text-lg">
+          <Link href={"/feed"}>Wolf Threads</Link>
+        </h1>
       </div>
       <div>
         <User user={data.data} href="account" />

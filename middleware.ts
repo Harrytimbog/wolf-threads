@@ -4,6 +4,22 @@ import { NextRequest, NextResponse } from "next/server";
 export async function middleware(request: NextRequest) {
   const pathname = request.nextUrl.pathname;
 
+  // Check if the path is the home page ("/")
+  if (pathname === "/") {
+    const cookie = request.cookies.get("jwt-token");
+
+    if (cookie && cookie.value) {
+      try {
+        const secret = new TextEncoder().encode(process.env.JWT_SECRET);
+        await jwtVerify(cookie.value, secret);
+        // If the token is valid, redirect to /feed
+        return NextResponse.rewrite(new URL("/feed", request.url));
+      } catch (error) {
+        console.error("Error verifying JWT:", error);
+      }
+    }
+  }
+
   const authenticatedAPIRoutes = [
     pathname.startsWith("/api/users"),
     pathname.startsWith("/api/posts"),
