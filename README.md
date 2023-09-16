@@ -1,5 +1,5 @@
 ## Live App Demo 
-[https://wolf-threads.vercel.app/](wolf-threads)
+[wolf-threads](https://wolf-threads.vercel.app/)
 
 ## Getting Started to run in development
 
