@@ -4,12 +4,16 @@ import { usePathname } from "next/navigation";
 const Navbar = () => {
   const pathname = usePathname();
   return (
-    <nav className="flex max-w-md w-full p-5 bg-slate-800 rounded-lg my-2">
+    <nav className="flex max-w-md w-full p-5 dark:bg-slate-800 bg-slate-300 rounded-lg my-2">
       <ul className="flex flex-row justify-around w-full">
         <li>
           <Link
             href="/feed"
-            className={pathname.startsWith("/feed") ? "text-green-400" : ""}
+            className={
+              pathname.startsWith("/feed")
+                ? "dark:text-green-400 text-green-800 "
+                : ""
+            }
           >
             Feed
           </Link>
@@ -17,7 +21,11 @@ const Navbar = () => {
         <li>
           <Link
             href="/profile"
-            className={pathname.startsWith("/profile") ? "text-green-400" : ""}
+            className={
+              pathname.startsWith("/profile")
+                ? "dark:text-green-400 text-green-800 "
+                : ""
+            }
           >
             Profile
           </Link>
@@ -26,7 +34,9 @@ const Navbar = () => {
           <Link
             href="/following"
             className={
-              pathname.startsWith("/following") ? "text-green-400" : ""
+              pathname.startsWith("/following")
+                ? "dark:text-green-400 text-green-800 "
+                : ""
             }
           >
             Following
@@ -36,7 +46,9 @@ const Navbar = () => {
           <Link
             href="/followers"
             className={
-              pathname.startsWith("/followers") ? "text-green-400" : ""
+              pathname.startsWith("/followers")
+                ? "dark:text-green-400 text-green-800 "
+                : ""
             }
           >
             Followers

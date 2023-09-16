@@ -45,18 +45,21 @@ const UserPageHeader = ({ username }: { username: string }) => {
   };
 
   return (
-    <header className="w-full bg-slate-800 p-2 rounded-lg flex flex-row justify-between">
+    <header className="w-full dark:bg-slate-800 bg-slate-300 p-2 rounded-lg flex flex-row justify-between">
       <h1 className="text-lg font-bold">{username}</h1>
       {dataFollow.data.length > 0 && (
         <button
           onClick={handleUnFollow}
-          className="bg-slate-900 p-2 rounded-lg"
+          className="dark:dark:bg-slate-900 bg-slate-400 bg-slate-400 p-2 rounded-lg"
         >
           Unfollow
         </button>
       )}
       {dataFollow.data.length === 0 && (
-        <button onClick={handleFollow} className="bg-slate-900 p-2 rounded-lg">
+        <button
+          onClick={handleFollow}
+          className="dark:dark:bg-slate-900 bg-slate-400 bg-slate-400 p-2 rounded-lg"
+        >
           Follow
         </button>
       )}
